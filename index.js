@@ -4,10 +4,11 @@ let min = 0
 let hora = 0 
 
 let start_btn = document.getElementById("start");
-
+ 
 start_btn.addEventListener('click', function(){
    timer = setInterval(Timer, 1000);
    reset_btn.disabled = true;
+   start_btn.disabled = true;
 })
 
 let pause_btn = document.getElementById("pause");
@@ -15,6 +16,7 @@ let pause_btn = document.getElementById("pause");
 pause_btn.addEventListener('click', function(){
    timer = clearInterval(timer);
    reset_btn.disabled = false;
+   start_btn.disabled = false;
 })
 
 let reset_btn = document.getElementById("reset");
@@ -22,6 +24,7 @@ let reset_btn = document.getElementById("reset");
 reset_btn.addEventListener('click', function(){
     timer = clearInterval(timer);
     reset_btn.disabled = true;
+   start_btn.disabled = false;
     seg = 0;
     min = 0;
     hora = 0;
